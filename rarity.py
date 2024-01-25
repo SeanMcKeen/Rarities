@@ -5,11 +5,16 @@ rarities = { # In percent format
     "uncommon" : 35,
     "rare" : 14,
     "legendary" : 1,
-    "mythical" : 0.1,
-    "blasphemous" : 0.01
+    "mythical" : 0.1
 }
 
-searchFor = "blasphemous"
+common = ["dog", "cat"]
+uncommon = ["bird", "turtle"]
+rare = ["fox", "owl"]
+legendary = ["bear", "moose"]
+mythical = ["polar bear", "dragon"]
+
+searchFor = "mythical"
 
 totalNum = 0
 for x in rarities.values():
@@ -27,9 +32,19 @@ while playing:
             numPick = random.uniform(1, totalNum)
             for key, value in rarities.items():
                 if numPick <= value + prevTotals:
-                    if key == searchFor:
-                        print(key)
-                        print(numPick)
+                    if key == "common":
+                        prize = random.choice(common)
+                    elif key == "uncommon":
+                        prize = random.choice(uncommon)
+                    elif key == "rare":
+                        prize = random.choice(rare)
+                    elif key == "legendary":
+                        prize = random.choice(legendary)
+                    elif key == "mythical":
+                        prize = random.choice(mythical)
+                    
+                    if prize == "dragon":
+                        print(prize)
                     break
                 prevTotals += value
     except:
