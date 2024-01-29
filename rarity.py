@@ -42,10 +42,7 @@ while playing:
                         prize = random.choice(legendary)
                     elif key == "mythical":
                         prize = random.choice(mythical)
-                    
-                    if prize == "dragon":
-                        print(prize)
-                    break
+                    print(prize)
                 prevTotals += value
     except:
         if plrInput == "stop":
